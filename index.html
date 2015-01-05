@@ -1,0 +1,59 @@
+<link rel="stylesheet" href="css/style.css"><!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>upstartBureau</title>
+	<link rel="stylesheet" href="css/webfont/Cubano-Regular/styles.css">
+	<link rel="stylesheet" href="css/webfont/DroidSansMono/styles.css">
+	<link rel="stylesheet" href="css/webfont/Interstate-Bold/styles.css">
+	<link rel="stylesheet" href="css/webfont/OstrichSans-Medium/styles.css">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<img src="upstart.svg" alt="company logo" id="logo">
+	<a href="#" id="back"><img src="arrow.svg" alt="" id="arrow"></a>
+	<nav>
+		<ul id="navigation">
+			<li class="nav-item"><a href="#" id="link1">about</a></li>
+			<li class="nav-item"><a href="">studies</a></li>
+			<li class="nav-item"><a href="">reach</a></li>
+		</ul>
+	</nav>
+	<div id="canvas-background"></div>
+	<div id="about"></div>
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/background.js"></script>
+	<script>
+	$('#link1').on('click', function(e){
+		e.preventDefault();
+		$('#arrow').animate({
+			opacity: '1'
+		}, 500);
+		$('#about').animate(
+			{
+				right: '-22px'
+			},
+			{
+				duration: 2000, 
+				ease: 'easeInSine'
+			});
+	});
+	$('#arrow').on('click', function(e){
+		e.preventDefault();
+		$(this).animate({
+			opacity: '0'
+		});
+		$('#about').animate(
+			{
+				right: '-100%'
+			},
+			{
+				duration: 2000, 
+				ease: 'easeInSine'
+			});
+	});
+	</script>
+</body>
+</html>

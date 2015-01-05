@@ -1,0 +1,59 @@
+body {
+	background-color: rgb(0,0,0);
+	canvas {
+		cursor: default;
+		background-color: rgba(15,15,15,0.9);
+	}
+	::selection {
+		background-color: rgb(0,0,0);
+		color: rgb(245,234,20);
+	}
+	#logo {
+		height: 92px;
+		width: 252px;
+		position: fixed;
+		top: 10px;
+		z-index: 2;
+	}
+	#arrow {
+		height: 81px;
+		position: fixed;
+		top: 40%;
+		opacity: 0;
+	}
+	#navigation {
+		list-style: none;
+		color: rgb(249,249,249);
+		margin-left: 110px;
+		margin-top: 250px;
+		a {
+			text-decoration: none;
+			color: rgb(249,249,249);
+		}
+		a:active {
+			color: rgb(25,25,25);
+		}
+		.nav-item {
+			font-family: 'Cubano-Regular';
+			font-size: 150px;
+			margin-bottom: 40px;
+		}
+	}
+	#canvas-background {
+		height: 100%;
+		width: 70%;
+		float: right;
+		position: fixed;
+		top: 0;
+		right: 0;
+		z-index: -1;
+	}
+	#about {
+		height: 100%;
+		width: 99%;
+		position: fixed;
+		top: 0;
+		right: -100%;
+		background-color: rgba(10,10,10,0.95);
+	}
+}
