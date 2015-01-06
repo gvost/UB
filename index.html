@@ -13,14 +13,16 @@
 <body>
 	<img src="upstart.svg" alt="company logo" id="logo">
 	<a href="#" id="back"><img src="arrow.svg" alt="" id="arrow"></a>
-	<nav>
-		<ul id="navigation">
-			<li class="nav-item"><a href="#" id="link1">about</a></li>
-			<li class="nav-item"><a href="">studies</a></li>
-			<li class="nav-item"><a href="">reach</a></li>
-		</ul>
-	</nav>
-	<div id="canvas-background"></div>
+	<div id="main-body">
+		<nav>
+			<ul id="navigation">
+				<li class="nav-item"><a href="#" id="link1">about</a></li>
+				<li class="nav-item"><a href="">studies</a></li>
+				<li class="nav-item"><a href="">reach</a></li>
+			</ul>
+		</nav>
+		<div id="canvas-background"></div>
+	</div>
 	<div id="about"></div>
 	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
@@ -31,6 +33,14 @@
 		$('#arrow').animate({
 			opacity: '1'
 		}, 500);
+		$('#about').animate(
+			{
+				right: '-22px'
+			},
+			{
+				duration: 2000, 
+				ease: 'easeInSine'
+			});
 		$('#about').animate(
 			{
 				right: '-22px'

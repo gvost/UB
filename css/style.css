@@ -1,5 +1,7 @@
 body {
   background-color: black; }
+  body #main-body {
+    position: fixed; }
   body canvas {
     cursor: default;
     background-color: rgba(15, 15, 15, 0.9); }
