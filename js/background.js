@@ -24,6 +24,14 @@
   var SMALL_BALL_COLOR = "rgba(200, 200, 200, 0.4)";  
   var SMALL_BALL_SPEED = 0.5;
 
+  var NUM_PARTICLES = 25;
+  var PARTICLE_SPEED = 2;
+  var PARTICLE_SIZE = 2;
+  var PARTICLE_COLORS = [
+    "rgba(245, 234, 20, 0.4)",
+    "rgba(41, 169, 225, 0.4)"
+  ]
+
   // site theme
   var THEME_COLORS = [
     "#f5ea14",    // yellow
@@ -104,13 +112,32 @@
       this.y = 0;
   }
 
+  function Particle(x, y, dx, dy, speed, color) {
+    this.x = x;
+    this.y = y;
+    this.dx = dx;
+    this.dy = dy;
+    this.speed = speed;
+    this.color = color;
+  }
+
+  Particle.prototype.update = function() {
+    this.x += this.dx * this.speed;
+    this.y += this.dy * this.speed;
+  }
+
+  Particle.prototype.draw = function() {
+    ctx.fillStyle = this.color;
+    ctx.fillRect(this.x, this.y, PARTICLE_SIZE, PARTICLE_SIZE);
+  }
+
   //////// GLOBAL VARIABLES ////////////
 
   // the canvas
   var container, canvas, width, height, ctx, requestAnimationFrame;
 
   // data structures
-  var endpoints, segments, segment_pairs, back_circles;
+  var endpoints, segments, segment_pairs, back_circles, particles;
 
   /////////// INITIALIZATION ///////////
 
@@ -179,6 +206,9 @@
     back_circles.push(bc);
   }  
 
+  // initialize particles array
+  particles = [];
+
   // start the animation
   requestAnimationFrame(loop);
 
@@ -227,12 +257,41 @@
       back_circles[i].draw();
     }
 
+    // update and draw the particles; eliminate the ones outside the viewing area
+    i = 0;
+    while (i < particles.length) {
+      if (particles[i].x < 0 || particles[i].x > width || particles[i].y < 0 || particles[i].y > height) {
+        particles.splice(i, 1);
+      } else {
+        particles[i].update();
+        particles[i].draw();
+        i++;
+      }
+    }   
+
     // loop back
     requestAnimationFrame(loop);
   }
 
   /////////// EVENT HANDLERS ////////////
 
+  // particle shower
+  $('body').click(function(event) {
+    var col = PARTICLE_COLORS[randInt(2)];
+    for (var i = 0; i < NUM_PARTICLES; i++) {
+      var p = new Particle(
+        event.clientX, 
+        event.clientY,                   
+        (randFloat(2) - 1) / 4, 
+        (randFloat(2) - 1) / 4, 
+        PARTICLE_SPEED, 
+        col
+      );
+      particles.push(p); 
+    }
+  }); 
+
+  // handle window resize
   $(window).resize(function() {
     width = container.offsetWidth;
     height = container.offsetHeight; 
@@ -305,5 +364,7 @@
   function randFloat(max) {
     return Math.random() * max;
   }
+
+
 
 })();

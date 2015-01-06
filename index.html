@@ -28,6 +28,7 @@
 	<script>
 	$('#link1').on('click', function(e){
 		e.preventDefault();
+		e.stopPropagation();
 		$('#arrow').animate({
 			opacity: '1'
 		}, 500);
@@ -42,6 +43,7 @@
 	});
 	$('#arrow').on('click', function(e){
 		e.preventDefault();
+		e.stopPropagation();
 		$(this).animate({
 			opacity: '0'
 		});
