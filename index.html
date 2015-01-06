@@ -25,43 +25,85 @@
 	</div>
 	<div id="about"></div>
 	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.js"></script>
 	<script type="text/javascript" src="js/background.js"></script>
 	<script>
 	$('#link1').on('click', function(e){
 		e.preventDefault();
 		$('#arrow').animate({
+			left: '10px',
 			opacity: '1'
-		}, 500);
+
+		}).delay(2000);
 		$('#about').animate(
 			{
-				right: '-22px'
+				left: '58px'
 			},
 			{
-				duration: 2000, 
-				ease: 'easeInSine'
+				duration: 200, 
+				easing: 'easeInOutExpo'
 			});
 		$('#about').animate(
 			{
-				right: '-22px'
+				left: '58px'
 			},
 			{
-				duration: 2000, 
-				ease: 'easeInSine'
+				duration: 200, 
+				easing: 'easeInOutExpo'
+			});
+		$('#navigation').animate(
+			{
+				opacity: '0',
+				left: '-2000px'
+				
+			},
+			{
+				duration: 100, 
+				easing: 'easeOutBack'
+			}).delay(10).animate({top: '100px', left: '50px', opacity: '0.9'});
+		$('.nav-item').animate(
+			{
+				fontSize: '90px',
+				opacity: '0.5'
+			},
+			{
+				duration: 200, 
+				easing: 'easeOutBack'
 			});
 	});
 	$('#arrow').on('click', function(e){
-		e.preventDefault();
+		/*e.preventDefault();*/
 		$(this).animate({
-			opacity: '0'
+			opacity: '0',
+			left: '-1000px'
+			
 		});
 		$('#about').animate(
 			{
-				right: '-100%'
+				left: '100%'
 			},
 			{
-				duration: 2000, 
-				ease: 'easeInSine'
+				duration: 200, 
+				ease: 'easeInOutExpo'
+			});
+		$('#navigation').animate(
+			{
+				opacity: '0',
+				left: '-2000px'
+				
+			},
+			
+				100, 
+				'easeOutBack'
+			)/*.delay(10)*/.animate({top: '250px', left: '118px', opacity: '1'});
+		$('.nav-item').animate(
+			{
+				fontSize: '100px',
+				opacity: '1'
+			},
+			{
+				duration: 200, 
+				ease: 'easeOutBack'
 			});
 	});
 	</script>

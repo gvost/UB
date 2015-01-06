@@ -1,8 +1,8 @@
 
 $theme_yellow: #f5ea14;    
-$theme_blue: 	 #29a9e1;    
-$theme_white:	 rgb(230,230,230); //#f9f9f9;    		
-$theme_black:  rgb(25,25,25);    //#111111;  
+$theme_blue: #29a9e1;    
+$theme_white: rgb(230,230,230); //#f9f9f9;    		
+$theme_black: rgb(25,25,25);    //#111111;  
 
 body {
 	background-color: rgb(0,0,0);
@@ -32,18 +32,23 @@ body {
 		position: fixed;
 		top: 40%;
 		opacity: 0;
+		z-index: 2;
+		left: -1000px;
 	}
 	#navigation {
+		position: fixed;
 		list-style: none;
 		color: $theme_white;
-		margin-left: 110px;
-		margin-top: 250px;
+		left: 110px;
+		top: 250px;
 		a {
 			text-decoration: none;
 			color: $theme_white;
+			transition: color 0.3s ease-out;
 		}
-		a:active {
-			color: rgb(25,25,25);
+		a:hover {
+			color: transparentize(rgb(10,10,10), 0.3);
+			
 		}
 		.nav-item {
 			font-family: 'Cubano-Regular';
@@ -53,7 +58,7 @@ body {
 	}
 	#canvas-background {
 		height: 100%;
-		width: 100%;
+		width: 150%;
 		float: right;
 		position: fixed;
 		top: 0;
@@ -66,10 +71,10 @@ body {
 	}
 	#about {
 		height: 100%;
-		width: 99%;
+		width: 100%;
 		position: fixed;
 		top: 0;
 		right: -100%;
-		background-color: rgba(10,10,10,0.95);
+		background-color: rgba(10,10,10,0.85);
 	}
 }

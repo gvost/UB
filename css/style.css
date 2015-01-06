@@ -22,24 +22,28 @@ body {
     height: 81px;
     position: fixed;
     top: 40%;
-    opacity: 0; }
+    opacity: 0;
+    z-index: 2;
+    left: -1000px; }
   body #navigation {
+    position: fixed;
     list-style: none;
     color: #e6e6e6;
-    margin-left: 110px;
-    margin-top: 250px; }
+    left: 110px;
+    top: 250px; }
     body #navigation a {
       text-decoration: none;
-      color: #e6e6e6; }
-    body #navigation a:active {
-      color: #191919; }
+      color: #e6e6e6;
+      transition: color 0.3s ease-out; }
+    body #navigation a:hover {
+      color: rgba(10, 10, 10, 0.7); }
     body #navigation .nav-item {
       font-family: 'Cubano-Regular';
       font-size: 100px;
       margin-bottom: 40px; }
   body #canvas-background {
     height: 100%;
-    width: 100%;
+    width: 150%;
     float: right;
     position: fixed;
     top: 0;
@@ -50,10 +54,10 @@ body {
       background-color: #191919; }
   body #about {
     height: 100%;
-    width: 99%;
+    width: 100%;
     position: fixed;
     top: 0;
     right: -100%;
-    background-color: rgba(10, 10, 10, 0.95); }
+    background-color: rgba(10, 10, 10, 0.85); }
 
 /*# sourceMappingURL=style.css.map */

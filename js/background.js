@@ -127,7 +127,6 @@ height = container.offsetHeight;
 
 
 
-
 // initialize endpoints array
 endpoints = [];
 for (var i = 0; i < NUM_ENDPOINTS; i++) {
