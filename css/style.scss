@@ -17,7 +17,7 @@ body {
 	}
 	background-color: $theme_black;
 	::selection {
-		background-color: $theme_black;
+		/* background-color: $theme_black; */
 		color: $theme_yellow;
 	}
 	#logo {
