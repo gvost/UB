@@ -1,10 +1,7 @@
 body {
-  background-color: black; }
-  body canvas {
-    cursor: default;
-    background-color: rgba(15, 15, 15, 0.9); }
+  background-color: #191919; }
   body ::selection {
-    background-color: black;
+    background-color: #191919;
     color: #f5ea14; }
   body #logo {
     height: 92px;
@@ -19,26 +16,29 @@ body {
     opacity: 0; }
   body #navigation {
     list-style: none;
-    color: #f9f9f9;
+    color: #e6e6e6;
     margin-left: 110px;
     margin-top: 250px; }
     body #navigation a {
       text-decoration: none;
-      color: #f9f9f9; }
+      color: #e6e6e6; }
     body #navigation a:active {
       color: #191919; }
     body #navigation .nav-item {
       font-family: 'Cubano-Regular';
-      font-size: 150px;
+      font-size: 100px;
       margin-bottom: 40px; }
   body #canvas-background {
     height: 100%;
-    width: 70%;
+    width: 100%;
     float: right;
     position: fixed;
     top: 0;
     right: 0;
     z-index: -1; }
+    body #canvas-background canvas {
+      cursor: default;
+      background-color: #191919; }
   body #about {
     height: 100%;
     width: 99%;

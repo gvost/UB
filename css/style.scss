@@ -1,12 +1,14 @@
+
+$theme_yellow: #f5ea14;    
+$theme_blue: 	 #29a9e1;    
+$theme_white:	 rgb(230,230,230); //#f9f9f9;    		
+$theme_black:  rgb(25,25,25);    //#111111;  
+
 body {
-	background-color: rgb(0,0,0);
-	canvas {
-		cursor: default;
-		background-color: rgba(15,15,15,0.9);
-	}
+	background-color: $theme_black;
 	::selection {
-		background-color: rgb(0,0,0);
-		color: rgb(245,234,20);
+		background-color: $theme_black;
+		color: $theme_yellow;
 	}
 	#logo {
 		height: 92px;
@@ -23,30 +25,34 @@ body {
 	}
 	#navigation {
 		list-style: none;
-		color: rgb(249,249,249);
+		color: $theme_white;
 		margin-left: 110px;
 		margin-top: 250px;
 		a {
 			text-decoration: none;
-			color: rgb(249,249,249);
+			color: $theme_white;
 		}
 		a:active {
 			color: rgb(25,25,25);
 		}
 		.nav-item {
 			font-family: 'Cubano-Regular';
-			font-size: 150px;
+			font-size: 100px;
 			margin-bottom: 40px;
 		}
 	}
 	#canvas-background {
 		height: 100%;
-		width: 70%;
+		width: 100%;
 		float: right;
 		position: fixed;
 		top: 0;
 		right: 0;
 		z-index: -1;
+		canvas {
+			cursor: default;
+			background-color: $theme_black;
+		}
 	}
 	#about {
 		height: 100%;
