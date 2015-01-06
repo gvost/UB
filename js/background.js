@@ -110,18 +110,23 @@ width = container.offsetWidth;
 height = container.offsetHeight;
 
 // create the canvas 
-canvas = document.createElement('canvas');
-container.appendChild(canvas);
-canvas.width = width;
-canvas.height = height;
-ctx = canvas.getContext('2d');
 
-// cross-browser RAF
-requestAnimationFrame = 
-  window.requestAnimationFrame || 
-  window.mozRequestAnimationFrame || 
-  window.webkitRequestAnimationFrame || 
-  window.msRequestAnimationFrame;
+  canvas = document.createElement('canvas');
+  container.appendChild(canvas);
+  canvas.width = width;
+  canvas.height = height;
+  ctx = canvas.getContext('2d');
+
+
+  // cross-browser RAF
+  requestAnimationFrame = 
+    window.requestAnimationFrame || 
+    window.mozRequestAnimationFrame || 
+    window.webkitRequestAnimationFrame || 
+    window.msRequestAnimationFrame;
+
+
+
 
 // initialize endpoints array
 endpoints = [];

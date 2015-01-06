@@ -5,7 +5,10 @@ body {
     position: fixed; }
   body canvas {
     cursor: default;
-    background-color: rgba(15, 15, 15, 0.9); }
+    background-color: white;
+    /* rgba(15,15,15,0.9); */
+    height: 100%;
+    width: 100%; }
   body ::selection {
     background-color: #191919;
     color: #f5ea14; }
