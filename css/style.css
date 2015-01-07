@@ -3,22 +3,25 @@ body {
   body ::selection {
     background-color: #191919;
     color: #f5ea14; }
-  body #logo {
+  body .logo {
     height: 92px;
     width: 252px;
     position: fixed;
     top: 10px;
+    z-index: 0; }
+  body #logo-top {
     z-index: 2; }
   body #arrow {
     height: 81px;
     position: fixed;
     top: 40%;
-    opacity: 0; }
+    opacity: 0;
+    z-index: 2; }
   body #navigation {
     list-style: none;
     color: #e6e6e6;
     margin-left: 110px;
-    margin-top: 250px; }
+    margin-top: 200px; }
     body #navigation a {
       text-decoration: none;
       color: #e6e6e6; }
@@ -41,10 +44,26 @@ body {
       background-color: #191919; }
   body #about {
     height: 100%;
-    width: 99%;
+    width: 100%;
     position: fixed;
     top: 0;
     right: -100%;
-    background-color: rgba(10, 10, 10, 0.95); }
+    color: white;
+    background-color: #191919;
+    overflow: scroll; }
+  body .heading {
+    margin-top: 200px;
+    margin-left: 200px;
+    font-family: sans-serif;
+    font-size: 40px;
+    color: #29a9e1;
+    border-bottom: 1px #f5ea14 dashed;
+    padding-bottom: 5px; }
+  body .about-text {
+    margin-top: 100px;
+    margin-left: 600px;
+    margin-right: 100px;
+    font-family: monospace;
+    font-size: 20px; }
 
 /*# sourceMappingURL=style.css.map */
