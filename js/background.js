@@ -89,12 +89,12 @@
   }
 
   Circle.prototype.draw = function() {
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI, false);
-    ctx.fillStyle = this.color;
-    ctx.strokeStyle = this.color;
-    ctx.fill();
-    ctx.stroke();
+    ctx2.beginPath();
+    ctx2.arc(this.x, this.y, this.radius, 0, 2 * Math.PI, false);
+    ctx2.fillStyle = this.color;
+    ctx2.strokeStyle = this.color;
+    ctx2.fill();
+    ctx2.stroke();
   }
 
   Circle.prototype.update = function() {
@@ -127,14 +127,14 @@
   }
 
   Particle.prototype.draw = function() {
-    ctx.fillStyle = this.color;
-    ctx.fillRect(this.x, this.y, PARTICLE_SIZE, PARTICLE_SIZE);
+    ctx2.fillStyle = this.color;
+    ctx2.fillRect(this.x, this.y, PARTICLE_SIZE, PARTICLE_SIZE);
   }
 
   //////// GLOBAL VARIABLES ////////////
 
   // the canvas
-  var container, canvas, width, height, ctx, requestAnimationFrame;
+  var container, container2, canvas, canvas2, width, height, ctx, ctx2, requestAnimationFrame;
 
   // data structures
   var endpoints, segments, segment_pairs, back_circles, particles;
@@ -142,7 +142,7 @@
   /////////// INITIALIZATION ///////////
 
   // detect canvas height and width
-  container = document.getElementById("canvas-background");
+  container = document.getElementById("bottom-canvas");
   width = container.offsetWidth;
   height = container.offsetHeight;
 
@@ -152,6 +152,13 @@
   canvas.width = width;
   canvas.height = height;
   ctx = canvas.getContext('2d');
+
+  container2 = document.getElementById("top-canvas");
+  canvas2 = document.createElement('canvas');
+  container2.appendChild(canvas2);
+  canvas2.width = width;
+  canvas2.height = height;
+  ctx2 = canvas2.getContext('2d');
 
   // cross-browser RAF
   requestAnimationFrame = 
@@ -219,6 +226,7 @@
 
     // clear canvas
     ctx.clearRect(0, 0 , width, height); 
+    ctx2.clearRect(0, 0, width, height);
 
     // if there's enough space for the floating polygon...
     if (width - ENDPOINT_LEFT_BOUNDARY > ENDPOINT_MIN_WIDTH) {

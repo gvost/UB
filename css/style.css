@@ -1,5 +1,12 @@
 body {
   background-color: #191919; }
+  body .noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
   body ::selection {
     background-color: #191919;
     color: #f5ea14; }
@@ -14,7 +21,7 @@ body {
   body #arrow {
     height: 81px;
     position: fixed;
-    top: 40%;
+    top: 43%;
     opacity: 0;
     z-index: 2; }
   body #navigation {
@@ -26,12 +33,12 @@ body {
       text-decoration: none;
       color: #e6e6e6; }
     body #navigation a:active {
-      color: #191919; }
+      color: #0a0a0a; }
     body #navigation .nav-item {
       font-family: 'Cubano-Regular';
       font-size: 100px;
       margin-bottom: 40px; }
-  body #canvas-background {
+  body #bottom-canvas {
     height: 100%;
     width: 100%;
     float: right;
@@ -39,9 +46,20 @@ body {
     top: 0;
     right: 0;
     z-index: -1; }
-    body #canvas-background canvas {
+    body #bottom-canvas canvas {
       cursor: default;
       background-color: #191919; }
+  body #top-canvas {
+    height: 100%;
+    width: 100%;
+    float: right;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    pointer-events: none; }
+    body #top-canvas canvas {
+      cursor: default; }
   body #about {
     height: 100%;
     width: 100%;
@@ -49,6 +67,7 @@ body {
     top: 0;
     right: -100%;
     color: white;
+    z-index: 1;
     background-color: #191919;
     overflow: scroll; }
   body .heading {
